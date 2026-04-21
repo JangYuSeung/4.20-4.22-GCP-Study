@@ -41,7 +41,8 @@ DB_NAME=iandb
 EOF
 
 # 7. docker compose 실행
-docker compose -f /app/docker-compose.yaml --env-file /app/.env up -d
+# --pull always 옵션으로 항상 최신 이미지로 실행하도록 변경
+docker compose -f /app/docker-compose.yaml --env-file /app/.env up -d --pull always
 
 # 8. 완료 플래그
 touch $FLAG_FILE
